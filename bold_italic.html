@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-  <p>My <em>favorite</em> game is <i>Dungeons & Dragons.</i></p>
-  
-  <p><strong>Warning</strong> coding ahead.</p>
-  
-  <p><b>Coding Web Page</b><p>
-  <p>Nothing important here.</p>
-  <p>"I" said <q>this</q></p>
-</head>
-<body>
-
-</body>
-</html>
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    ans = {}
+    exit = 0
+    for _ in range(n):
+        total = 0
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+        for x in scores:
+            total += x
+        total = total/len(scores)
+        ans[name] = total
+    query_name = input()
+    print("%.2f" % ans[query_name])
